@@ -17,16 +17,17 @@ class LoginPage extends StatelessWidget {
       home: Scaffold(
         body: Stack(
           children: [
-            Container(
-              height: 140.0,
-              width: 50.0,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  fit: BoxFit.contain,
-                  image: AssetImage('images/banner.png'),
-                ),
-              ),
-            ),
+            // Container(
+            //   height: 140.0,
+            //   width: 50.0,
+            //   decoration: BoxDecoration(
+            //     image: DecorationImage(
+            //       fit: BoxFit.contain,
+            //       image: AssetImage(
+            //           'assets/images/7d498f42-2e04-46a1-904c-97fa32032942.jpg'),
+            //     ),
+            //   ),
+            // ),
             LoginInput(),
           ],
         ),
