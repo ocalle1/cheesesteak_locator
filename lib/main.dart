@@ -1,3 +1,5 @@
+import 'package:cheesesteak_locator/login_and_signoff/login_input.dart';
+import 'package:cheesesteak_locator/login_and_signoff/signoff.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,8 +13,8 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Column(
-          children: [Text("TESTING")],
+        home: Center(
+          child: const LoginInput(),
         ));
   }
 }
