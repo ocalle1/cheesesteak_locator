@@ -17,13 +17,16 @@ class LoginPage extends StatelessWidget {
       home: Scaffold(
         body: Stack(
           children: [
-            Positioned.fill(
-              child: Image.asset(
-                'assets/images/images.jpg', // Replace 'background_image.jpg' with your actual image path
-                fit: BoxFit.cover,
+            Container(
+              height: 140.0,
+              width: 50.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.contain,
+                  image: AssetImage('images/banner.png'),
+                ),
               ),
             ),
-            // BackGroundImage(),
             LoginInput(),
           ],
         ),
