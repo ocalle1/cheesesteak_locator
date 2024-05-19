@@ -9,14 +9,32 @@ void main() {
 }
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Stack(
+        appBar: AppBar(
+          title: Text(''),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.blue),
+                child: Text('Drawer Header'),
+              ),
+              ListTile(title: const Text('Item 1'), onTap: () {}),
+              ListTile(title: const Text('Item 2'), onTap: () {}),
+              ListTile(title: const Text('Item 3'), onTap: () {}),
+              ListTile(title: const Text('Item 4'), onTap: () {}),
+            ],
+          ),
+        ),
+        body: const Stack(
           children: [
             Positioned.fill(
               child: CarouselImages(),
@@ -39,7 +57,6 @@ class CarouselImages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // drawer: Drawer(child: ,),
       body: ListView(
         children: [
           CarouselSlider(
