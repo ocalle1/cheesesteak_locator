@@ -1,9 +1,14 @@
 import 'package:cheesesteak_locator/search_screen.dart';
+import 'package:cheesesteak_locator/widgets/cheesestak_map.dart';
+import 'package:cheesesteak_locator/widgets/cheesestak_map.dart';
 import 'package:flutter/material.dart';
-import 'package:cheesesteak_locator/login_and_signoff/login_input.dart';
-import 'package:cheesesteak_locator/login_and_signoff/signoff.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:cheesesteak_locator/login_and_signoff/login_input.dart';
+// import 'package:cheesesteak_locator/login_and_signoff/signoff.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
+import 'package:google_maps/google_maps.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart'; //google map for restaurant locations
 
 void main() {
   runApp(const LoginPage());
@@ -26,25 +31,36 @@ class LoginPage extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  const DrawerHeader(
+                  DrawerHeader(
                     decoration: BoxDecoration(color: Colors.blue),
                     child: Text('Drawer Header'),
                   ),
                 ],
                 // SearchScreen(),
               ),
-              Builder(builder: (context) {
-                return ListTile(
-                  title: const Text('Search'),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SearchScreen()),
-                    );
-                  },
-                );
-              }),
+              Builder(
+                builder: (context) {
+                  return ListTile(
+                    title: const Text('Search'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SearchScreen()),
+                      );
+                    },
+                  );
+                },
+              ),
+              // ListTile(
+              //   title: const Text('Map'),
+              //   onTap: () {
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(builder: (context) => const GoogleMaps()),
+              //     );
+              //   },
+              // ),
               ListTile(title: const Text('Item 1'), onTap: () {}),
               ListTile(title: const Text('Item 2'), onTap: () {}),
               ListTile(title: const Text('Item 3'), onTap: () {}),
@@ -67,6 +83,7 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
+  // CheeseSteakMap(),
 }
 
 class CarouselImages extends StatelessWidget {

@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
   @override
-  // ignore: library_private_types_in_public_api
   _SearchScreenState createState() => _SearchScreenState();
 }
 
@@ -28,11 +27,13 @@ class _SearchScreenState extends State<SearchScreen> {
 
 // updates setState when user inputs a query in the search field; data = the List of fruits
   void onQueryChanged(String query) {
+    print("Query changed: $query");
     setState(() {
       searchResults = data
           .where((item) => item.toLowerCase().contains(query.toLowerCase()))
           .toList();
     });
+    print("Search results: $searchResults");
   }
 
   @override
@@ -48,6 +49,7 @@ class _SearchScreenState extends State<SearchScreen> {
               child: ListView.builder(
             itemCount: searchResults.length,
             itemBuilder: (context, index) {
+              print("Building item at index $index");
               return ListTile(
                 title: Text(searchResults[index]),
               );
